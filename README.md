@@ -1,17 +1,22 @@
 <div align="center">
   <img src="public/logo.png" alt="Search-R1 logo" width="200"/>
 
-  # Search-R1 (Enhanced)
+  # Search-R1(二次开发增强版)
 
-  **Reinforcement-learning agents that learn to *think → search → answer*, built on [veRL](https://github.com/volcengine/verl).**
+  **通过强化学习训练"推理→搜索→回答"的 Agent,基于 [veRL](https://github.com/volcengine/verl) 构建。**
 
   [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-  [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](#installation)
+  [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](#安装)
   [![Built on veRL](https://img.shields.io/badge/built%20on-veRL-orange.svg)](VERL_README.md)
-  [![PPO%2FGRPO](https://img.shields.io/badge/RL-PPO%20%7C%20GRPO-brightgreen.svg)](#installation)
+  [![PPO%2FGRPO](https://img.shields.io/badge/RL-PPO%20%7C%20GRPO-brightgreen.svg)](#安装)
 
-  <a href="README_zh.md">中文文档</a>
+  <p align="right"><a href="#english">English</a> | <a href="#中文">中文</a></p>
 </div>
+
+---
+
+<a id="english"></a>
+## English
 
 ---
 
