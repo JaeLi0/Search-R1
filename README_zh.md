@@ -10,7 +10,7 @@
   [![Built on veRL](https://img.shields.io/badge/built%20on-veRL-orange.svg)](VERL_README.md)
   [![PPO%2FGRPO](https://img.shields.io/badge/RL-PPO%20%7C%20GRPO-brightgreen.svg)](#安装)
 
-  <p align="center"><a href="#english">English</a> | <a href="#中文">中文</a></p>
+  <p align="center"><a href="README.md">English</a> | <a href="README_zh.md">中文</a></p>
 </div>
 
 
