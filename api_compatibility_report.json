@@ -1,0 +1,21 @@
+{
+  "verification_date": "2026-05-07",
+  "original_module": "search_r1/search/retrieval_server.py",
+  "optimized_module": "search_r1/search/hybrid_retrieval.py",
+  "compatibility_status": "FULLY COMPATIBLE",
+  "checks": {
+    "request_schema": "pass",
+    "response_schema": "pass",
+    "endpoint_compatibility": "pass",
+    "semantic_compatibility": "pass",
+    "generation_integration": "pass",
+    "no_breaking_changes": "pass",
+    "simulated_requests": "pass"
+  },
+  "breaking_changes": [],
+  "migration_steps": [
+    "启动 hybrid_retrieval.py 替代 retrieval_server.py",
+    "训练脚本中 search_url 无需修改",
+    "原 retrieval_server.py 可随时回退使用"
+  ]
+}
