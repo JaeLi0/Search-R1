@@ -10,7 +10,7 @@
   [![Built on veRL](https://img.shields.io/badge/built%20on-veRL-orange.svg)](VERL_README.md)
   [![PPO%2FGRPO](https://img.shields.io/badge/RL-PPO%20%7C%20GRPO-brightgreen.svg)](#安装)
 
-  <a href="README.md">English</a>
+  <p align="right"><a href="#english">English</a> | <a href="#中文">中文</a></p>
 </div>
 
 ---
@@ -42,6 +42,19 @@ RRF_score(d) = Σ 1 / (k + rank_i(d))      (k = 60)
 ### 4. 训练数据增强
 
 `scripts/data_optimization.py` 在原有数据流程之上新增一个可选的预处理阶段:查询扩展(同义词替换 + 句式改写)、难度分层为 easy/medium/hard 三级(基于问题长度、多跳指示词、时间/否定限定词、专有名词密度五个特征打分)、6 类查询意图分类、基于规则的质量过滤,以及对比样本构造(数字 ±1 扰动 + 实体替换,构造难负例/正例对)。输出格式与原 parquet 数据兼容,属于可选启用,不影响原有数据流程。
+
+## 项目结构
+
+```
+search_r1/
+├── llm_agent/          # 多轮 Think-Search-Answer 循环 (generation.py, tensor_helper.py)
+└── search/             # 检索后端:BM25、Dense (FAISS)、混合 RRF 融合、重排序
+verl/                   # RL 训练引擎 (Ray + FSDP + vLLM),fork 自字节跳动 veRL
+scripts/                # 数据下载/预处理、检索基准测试、数据增强
+train_grpo.sh / train_ppo.sh   # 训练入口脚本
+```
+
+
 
 ## 架构
 
@@ -133,16 +146,6 @@ python scripts/optimization_benchmark.py
 
 奖励塑形和数据增强的代码均已实现、可独立验证(见 `verl/trainer/main_ppo_format.py::RewardManager` 与 `scripts/data_optimization.py`),但本仓库尚未跑完整的 RL 训练来产出端到端训练曲线,这里不对训练效果做数字宣称。
 
-## 项目结构
-
-```
-search_r1/
-├── llm_agent/          # 多轮 Think-Search-Answer 循环 (generation.py, tensor_helper.py)
-└── search/             # 检索后端:BM25、Dense (FAISS)、混合 RRF 融合、重排序
-verl/                   # RL 训练引擎 (Ray + FSDP + vLLM),fork 自字节跳动 veRL
-scripts/                # 数据下载/预处理、检索基准测试、数据增强
-train_grpo.sh / train_ppo.sh   # 训练入口脚本
-```
 
 ## 致谢
 
