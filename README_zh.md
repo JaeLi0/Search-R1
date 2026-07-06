@@ -15,6 +15,11 @@
 
 ---
 
+<a id="Chinese"></a>
+## 中文
+
+---
+
 ## 项目简介
 
 Search-R1 用强化学习(PPO/GRPO)训练大语言模型交替进行"推理"与"搜索"。模型每一轮可以发起搜索(`<search>query</search>`)或直接给出答案(`<answer>...</answer>`),检索到的文档以 `<information>...</information>` 形式注入上下文,并在训练时通过 `info_mask` 被排除在 loss 计算之外,避免模型把检索结果误当作自己生成的内容来学习。
